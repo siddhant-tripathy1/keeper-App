@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import Footer from "./Footer";
+
 import Note from "./Note";
 import notes from "../notes";
 
@@ -8,8 +8,9 @@ function App() {
   return (
     <div>
       <Header />
-      <Note />
-      <Footer />
+      {notes.map((item) => (
+        <Note id={item.name} content={item.content} name={item.name} />
+      ))}
     </div>
   );
 }
